@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block head %}
+<title>Profile </title>
+{% endblock%}
+{% block body %}
+
+<div class="container">
+    <h1 class="text-primary"> User profile...</h1>
+</br>
+    <div class  = "col-md-4">
+        <img src = "{{ user.userprofile.image.url }}"  alt = "name" class="rounded-circle" > 
+    </div>
+    <div class = "col-md-8">
+    <div class="text-primary">
+    <span class="border border-primary">
+    <p><span class="badge badge-secondary">username:</span> {{user}}</p>
+    <p><span class="badge badge-secondary">first_name: </span>{{user.first_name}}</p>
+    <p><span class="badge badge-secondary">last_name: </span>{{user.last_name}}</p>
+    <p><span class="badge badge-secondary">email: </span>{{user.email}}</p>
+    <p><span class="badge badge-secondary">website: </span><a href="{{user.userprofile.website}}" >{{user.userprofile.website}}</p>
+    </div>
+        {% if user.userprofile.image %} 
+</span>
+    </div>
+    {% endif %}
+</div>
+
+{%endblock%}

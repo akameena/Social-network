@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+<!--
+    <html>
+    <head>
+        <title>Login</title>
+         
+
+        {% load static %}
+        <link rel="stylesheet"
+         href={% static 'account/style.css' %} type="text/css">
+    </head>
+    <body>
+        <div class="container">
+            <h1> Hello {{username}}</h1>
+            WELCOME! You can login heare!
+            <ul>
+                {%for number in numbers%}
+                <li> {{number}} </li>
+                {% endfor %}
+            </ul>
+            <button class = "btn btn-primary" type = "button" name  = "button" >login</button>
+        </div>
+    </body>
+</html>
+-->
+{% block head %}
+<title>Login</title>
+{% endblock%}
+{% block body %}
+<div class="container text-center">
+    <h1> Welcome!</h1>
+    <p class="text-info">you can login here!</p>
+    
+    
+    <form method="post"  class="text-primary border">
+    {% csrf_token %}
+    {{ form.as_p }} 
+    <button type="submit" class="btn btn-primary">Loign</button>
+    </form>
+</div>
+{% endblock %}
